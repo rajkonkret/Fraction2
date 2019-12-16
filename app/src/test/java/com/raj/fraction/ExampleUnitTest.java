@@ -1,4 +1,4 @@
-package com.example.fraction;
+package com.raj.fraction;
 
 import org.junit.Test;
 
