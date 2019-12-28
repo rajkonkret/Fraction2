@@ -81,30 +81,36 @@ public class MainActivity extends AppCompatActivity {
                     Integer.valueOf(String.valueOf(edTxtFrac2Den.getText())));
 
             Calculator calc = new Calculator();
-
+            Fraction fractionR = new Fraction(Integer.valueOf(String.valueOf(edTxtFrac1Num.getText())),
+                        Integer.valueOf(String.valueOf(edTxtFrac1Den.getText())));
             switch (bOperationText) {
                 case "+":
-                    Fraction fractionResult = calc.addFraction(fraction1, fraction2);
-                    edTxtResultNum.setText(String.valueOf(fractionResult.getNumerator()));
-                    edTxtResultDen.setText(String.valueOf(fractionResult.getDenominator()));
+                   // Fraction fractionResult = calc.addFraction(fraction1, fraction2);
+                    fractionR = calc.addFraction(fraction1, fraction2);
+                   // edTxtResultNum.setText(String.valueOf(fractionResult.getNumerator()));
+                 //   edTxtResultDen.setText(String.valueOf(fractionResult.getDenominator()));
                     break;
                 case "-":
-                    Fraction fractionResultMinus = calc.subFraction(fraction1, fraction2);
-                    edTxtResultNum.setText(String.valueOf(fractionResultMinus.getNumerator()));
-                    edTxtResultDen.setText(String.valueOf(fractionResultMinus.getDenominator()));
+                   // Fraction fractionResultMinus = calc.subFraction(fraction1, fraction2);
+                    fractionR = calc.subFraction(fraction1, fraction2);
+                 //   edTxtResultNum.setText(String.valueOf(fractionResultMinus.getNumerator()));
+                 ///   edTxtResultDen.setText(String.valueOf(fractionResultMinus.getDenominator()));
                     break;
                 case "*":
-                    Fraction fractionResultMu = calc.mulFraction(fraction1, fraction2);
-                    edTxtResultNum.setText(String.valueOf(fractionResultMu.getNumerator()));
-                    edTxtResultDen.setText(String.valueOf(fractionResultMu.getDenominator()));
+                  //  Fraction fractionResultMu = calc.mulFraction(fraction1, fraction2);
+                    fractionR = calc.mulFraction(fraction1, fraction2);
+                  //  edTxtResultNum.setText(String.valueOf(fractionResultMu.getNumerator()));
+                 //   edTxtResultDen.setText(String.valueOf(fractionResultMu.getDenominator()));
                     break;
                 case ":":
-                    Fraction fractionResultD = calc.divFraction(fraction1, fraction2);
-                    edTxtResultNum.setText(String.valueOf(fractionResultD.getNumerator()));
-                    edTxtResultDen.setText(String.valueOf(fractionResultD.getDenominator()));
+                 //   Fraction fractionResultD = calc.divFraction(fraction1, fraction2);
+                        fractionR = calc.divFraction(fraction1, fraction2);
+                //    edTxtResultNum.setText(String.valueOf(fractionResultD.getNumerator()));
+               //     edTxtResultDen.setText(String.valueOf(fractionResultD.getDenominator()));
                     break;
             }
-
+            edTxtResultNum.setText(String.valueOf(fractionR.getNumerator()));
+            edTxtResultDen.setText(String.valueOf(fractionR.getDenominator()));
 
         }
     }
