@@ -75,4 +75,10 @@ class Calculator {
         System.out.println("wynosi: " + firstN);
         return firstN;
     }
+
+    Fraction shorter(Fraction fraction) {
+        int resultShort = nwd(fraction.getNumerator(), fraction.getDenominator());
+        return new Fraction(fraction.getNumerator() / resultShort,
+                fraction.getDenominator() / resultShort);
+    }
 }
